@@ -1,0 +1,92 @@
+<div class="navigation">
+    <input type="checkbox" class="navigation__checkbox"
+    id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">
+
+        </span>
+    </label>
+
+</div>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navigation{
+        height: 100vh;
+        display:flex ;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+    .navigation__checkbox{
+        display: none;
+    }
+    .navigation__button{
+        background-color:crimson;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 80%;
+        z-index: 3000;
+        box-shadow:0 1rem 3 rem rgba(#fafaf9,0.1) ;
+        text-align: center;
+        cursor: pointer;
+
+    }
+    .navigation__icon{
+        position: relative;
+        margin: 3.5rem;
+
+    }
+    .navigation__icon,
+    .navigation__icon::before,
+    .navigation__icon::after{
+        width: 3rem;
+        height: 5px;
+        background-color: #fafaf9;
+        display: inline-block;
+
+
+    }
+    .navigation__icon::before,
+    .navigation__icon::after{
+        content: "";
+        position:absolute;
+        left: 0;
+        transition: all 0.2s;
+    }
+    .navigation__icon::before{
+        top: -0.8rem;
+    }
+    .navigation__icon::after{
+        top: 0.8rem;
+    }
+    .navigation__button:hover .navigation__icon::before{
+        top:-1rem;
+    }
+    .navigation__button:hover .navigation__icon::after{
+        top: 1rem;
+    }
+    .navigation__checkbox:checked + .navigation__button
+    .navigation__icon{
+        background-color: transparent;
+    }
+
+    .navigation__checkbox:checked + .navigation__button
+    .navigation__icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    .navigation__checkbox:checked + .navigation__button
+    .navigation__icon::after{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+
+    
+</style>
